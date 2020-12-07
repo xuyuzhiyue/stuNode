@@ -1,0 +1,81 @@
+1.git init 
+
+2.git config --global user.name "xuyuzhiyue"
+   git config -- global user.email “240011530@qq.com”
+
+3.git add README.md
+
+4.git commit -m "first commit"
+
+先5.git remote add origin https://github.com/xuyuzhiyue/xiaomi.git
+再分支
+
+6.git push -u origin master
+
+7.git branch (branchname)    :创建分支命令
+
+8.git checkout (branchname)    :切换分支命令:
+
+9.git checkout -b (branchname)    :创建并切换到新分支
+
+10.git status  查看当前状态，查看本地分支文件信息
+
+11.查看本地分支：$ git branch
+    查看远程分支：$ git branch -r
+
+12.git clone -b dev2 https://github.com/xuyuzhiyue/xiaomi.git   :可以克隆分支下的代码了到本地
+
+13.git clone http://XXX (git@github.comXXXXX.git)   ：克隆项目到本地
+
+14.git branch -d (branchname)    ：可以删除本地分支（在主分支中）
+14-1.git push origin --delete Chapater6   可以删除远程分支Chapater6   
+
+15.git branch -a   == git branch -D dev-git查看所有分支包括本地和远程
+
+16.git branch  列出分支
+
+17.git status会列出在本地的分支
+
+18.git status命令表示：文件，文件夹在工作区，暂存区的状态
+
+19.git log   命令列出历史提交
+
+20.git log --oneline  查看历史记录的简洁的版本。
+
+22.git rm --cached <file>  如果把文件从暂存区域移除，但仍然希望保留在当前工作目录中，换句话说，仅是从跟踪清单中删除，使用 --cached 选项即可
+
+23.$ git push origin test:test              // 前着提交本地test分支作为远程的后者test分支
+
+24.git ls-files  如何查看暂存区中有哪些文件
+
+-----
+25. git merge newtest  ：任何分支合并到当前分支中去
+   切换到：git checkout master   /git checkout -f master
+    出现错误： error: The following untracked working tree files would be overwritten by checkout:
+        data-ui/css/index.css
+        data-ui/index.html
+        data-ui/js/index.js
+   Please move or remove them before you switch branches.
+   Aborting
+  然后就：git clean -dfx  ：删除 文件 和 目录
+  再git ls-files :如何查看暂存区中有哪些文件
+  再清除里面的缓存：git rm --cached <file> 
+  最后再：git checkout master，即可
+
+26.git reset --soft HEAD~1：撤回commit之前的上一次
+
+27. dass查询、da写入
+
+28.1.同步远程仓库所有更新：git fetch -a；
+     2.合并主分支内容：git merge origin/alpha2.0
+
+29.git reset --soft HEAD^  -----git commit后，如何撤销commit
+
+
+30.　　1 先切换到别的分支: git checkout dev20180927
+
+　　2 删除本地分支： git branch -d dev20181018
+
+　　3 如果删除不了可以强制删除，git branch -D dev20181018
+
+　　4 有必要的情况下，删除远程分支(慎用)：git push origin --delete dev20181018
